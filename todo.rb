@@ -1,10 +1,15 @@
 #!/usr/bin/env ruby
 require_relative 'command_line_interface'
 
-def main
-  command = ARGV[0].sub(/^--/, '')
-  argument = ARGV[1..-1].join(' ')
+def command
+  ARGV[0].sub(/^--/, '')
+end
 
+def argument
+  ARGV[1..-1].join(' ')
+end
+
+def main
   cli = CommandLineInterface.new
   cli.send(command, argument)
   cli.save
