@@ -7,6 +7,6 @@ class TodoItem
   end
 
   def to_s
-    @description + ' - ' + (@done ? '' : 'not ') + 'done'
+    "#{@description} - #{@done ? '' : 'not '} done"
   end
 end
