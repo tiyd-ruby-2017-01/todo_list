@@ -20,13 +20,13 @@ class TodoList
   def done(id)
     begin
       id = Integer(id)
-
+    rescue ArgumentError
+    else
       todo = self[id - 1]
 
       return if todo.nil?
 
       todo.done = true
-    rescue ArgumentError
     end
   end
 
